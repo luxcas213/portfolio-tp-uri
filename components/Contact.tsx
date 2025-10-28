@@ -1,7 +1,7 @@
 "use client";
 
-import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaUser } from 'react-icons/fa';
-
+import Image from "next/image";
+import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Contact() {
   const contactInfo = {
@@ -21,7 +21,7 @@ export default function Contact() {
     {
       name: "GitHub",
       icon: <FaGithub />,
-      url: "https://github.com/tu-usuario",
+      url: "https://github.com/UriZaltzman",
       color: "hover:text-gray-900",
     },
     {
@@ -39,66 +39,68 @@ export default function Contact() {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-4xl w-full">
-        <h2 className="text-5xl md:text-6xl font-bold mb-12 text-gray-900 text-center">
+    <section className="min-h-screen flex items-center justify-center px-6 py-8">
+      <div className="max-w-5xl w-full">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 text-center">
           Contacto
         </h2>
         
-        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-          {/* Información Personal */}
-          <div className="text-center mb-8">
-            <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl text-white">
-              <FaUser />
+        <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+          {/* Información Personal - Compacta */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-6 pb-6 border-b border-gray-200">
+            <div className="w-24 h-24 rounded-full overflow-hidden shrink-0">
+              <Image
+                src="/posh.png"
+                alt="Uriel Zaltzman"
+                width={96}
+                height={96}
+                className="object-cover"
+              />
             </div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-2">
-              {contactInfo.name}
-            </h3>
-            <p className="text-xl text-gray-600 mb-2">{contactInfo.role}</p>
-            <p className="text-gray-500 flex items-center justify-center gap-2">
-              <FaMapMarkerAlt /> {contactInfo.location}
-            </p>
-          </div>
-
-          {/* Email */}
-          <div className="mb-8 text-center">
-            <a
-              href={`mailto:${contactInfo.email}`}
-              className="inline-flex items-center gap-2 text-lg text-blue-600 hover:text-blue-700 font-medium transition-colors"
-            >
-              <FaEnvelope />
-              {contactInfo.email}
-            </a>
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                {contactInfo.name}
+              </h3>
+              <p className="text-lg text-gray-600 mb-1">{contactInfo.role}</p>
+              <p className="text-gray-500 flex items-center justify-center md:justify-start gap-2 text-sm">
+                <FaMapMarkerAlt /> {contactInfo.location}
+              </p>
+            </div>
           </div>
 
           {/* Redes Sociales */}
-          <div className="border-t border-gray-200 pt-8">
-            <p className="text-center text-gray-600 mb-6 text-lg">
+          <div>
+            <p className="text-center text-gray-600 mb-5 text-lg font-semibold">
               Conéctate conmigo en:
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300 ${social.color} group`}
+                  className={`flex items-center gap-5 p-5 rounded-xl bg-linear-to-br from-gray-50 to-gray-100 hover:from-white hover:to-gray-50 shadow-md hover:shadow-xl transition-all duration-300 ${social.color} group border border-gray-200`}
                 >
-                  <span className="text-4xl group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">
                     {social.icon}
                   </span>
-                  <span className="font-medium text-gray-700">
-                    {social.name}
-                  </span>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-lg md:text-xl text-gray-800">
+                      {social.name}
+                    </span>
+                    <span className="text-xs text-gray-500 mt-1">
+                      {social.name === "Email" ? contactInfo.email : `@${social.name === "LinkedIn" ? "uri-zaltzman" : social.name === "GitHub" ? "UriZaltzman" : "uri.zaltzman"}`}
+                    </span>
+                  </div>
                 </a>
               ))}
             </div>
           </div>
 
           {/* Mensaje de llamada a la acción */}
-          <div className="mt-8 text-center">
-            <p className="text-gray-600 text-lg">
+          <div className="mt-5 text-center">
+            <p className="text-gray-600 text-base">
               ¿Tienes un proyecto en mente? ¡No dudes en contactarme!
             </p>
           </div>
