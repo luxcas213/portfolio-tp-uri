@@ -1,35 +1,38 @@
 "use client";
 
+import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaUser } from 'react-icons/fa';
+
+
 export default function Contact() {
   const contactInfo = {
-    name: "Tu Nombre",
+    name: "Uriel Zaltzman",
     role: "Desarrollador Full Stack",
-    email: "tu.email@ejemplo.com",
-    location: "Ciudad, País",
+    email: "uri.zaltzman@gmail.com",
+    location: "Buenos Aires, Argentina",
   };
 
   const socialLinks = [
     {
       name: "LinkedIn",
-      icon: "💼",
-      url: "https://linkedin.com/in/tu-perfil",
+      icon: <FaLinkedin />,
+      url: "https://www.linkedin.com/in/uri-zaltzman-405662357/",
       color: "hover:text-blue-700",
     },
     {
       name: "GitHub",
-      icon: "🐱",
+      icon: <FaGithub />,
       url: "https://github.com/tu-usuario",
       color: "hover:text-gray-900",
     },
     {
       name: "Instagram",
-      icon: "📷",
-      url: "https://instagram.com/tu-usuario",
+      icon: <FaInstagram />,
+      url: "https://instagram.com/uri.zaltzman",
       color: "hover:text-pink-600",
     },
     {
       name: "Email",
-      icon: "📧",
+      icon: <FaEnvelope />,
       url: `mailto:${contactInfo.email}`,
       color: "hover:text-red-600",
     },
@@ -45,15 +48,15 @@ export default function Contact() {
         <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
           {/* Información Personal */}
           <div className="text-center mb-8">
-            <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl">
-              👤
+            <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center text-6xl text-white">
+              <FaUser />
             </div>
             <h3 className="text-3xl font-bold text-gray-900 mb-2">
               {contactInfo.name}
             </h3>
             <p className="text-xl text-gray-600 mb-2">{contactInfo.role}</p>
             <p className="text-gray-500 flex items-center justify-center gap-2">
-              <span>📍</span> {contactInfo.location}
+              <FaMapMarkerAlt /> {contactInfo.location}
             </p>
           </div>
 
@@ -63,7 +66,7 @@ export default function Contact() {
               href={`mailto:${contactInfo.email}`}
               className="inline-flex items-center gap-2 text-lg text-blue-600 hover:text-blue-700 font-medium transition-colors"
             >
-              <span>✉️</span>
+              <FaEnvelope />
               {contactInfo.email}
             </a>
           </div>
