@@ -3,10 +3,10 @@
 const projects = [
   {
     id: 1,
-    title: "TaskFlow Pro",
-    description: "Aplicación full-stack para gestión de tareas con colaboración en tiempo real",
+    title: "wallettic",
+    description: "una billetera virtual para gente de tercera edad",
     technologies: "React, Node.js, MongoDB, Socket.io",
-    link: "https://taskflow-demo.vercel.app"
+    link: "https://wallettic.vercel.app"
   },
   {
     id: 2,
@@ -17,14 +17,14 @@ const projects = [
   },
   {
     id: 3,
-    title: "Blog CMS",
-    description: "Sistema de gestión de contenidos con editor markdown y panel de administración",
+    title: "todo app",
+    description: "Aplicación de tareas con creación, edición, prioridades, etiquetas y sincronización en tiempo real",
     technologies: "React, TypeScript, Firebase, TailwindCSS",
     link: "https://blog-cms-demo.vercel.app"
   },
   {
     id: 4,
-    title: "Weather Dashboard",
+    title: "aplicacion de clima",
     description: "Dashboard interactivo del clima con visualizaciones y pronósticos extendidos",
     technologies: "Vue.js, Node.js, OpenWeather API, Chart.js",
     link: "https://weather-dashboard-demo.vercel.app"
