@@ -9,7 +9,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
   const sections = [
     { id: "inicio", label: "Inicio" },
     { id: "sobre-mi", label: "Sobre Mí" },
-    { id: "tecnologias", label: "Tecnologías" },
+    { id: "proyectos", label: "Proyectos" },
     { id: "contacto", label: "Contacto" },
   ];
 

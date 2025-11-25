@@ -17,10 +17,10 @@ export default function Hero({ setActiveSection }: HeroProps) {
             Desarrollador Full Stack | Diseñador | Creativo
           </p>
           <button
-            onClick={() => setActiveSection("tecnologias")}
+            onClick={() => setActiveSection("proyectos")}
             className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
-            Ver tecnologías
+            Ver proyectos
           </button>
         </div>
 

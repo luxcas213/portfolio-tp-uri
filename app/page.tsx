@@ -4,7 +4,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Technologies from "@/components/Technologies";
+import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import AnimatedBackground from "@/components/AnimatedBackground";
 
@@ -22,7 +22,7 @@ export default function Page() {
         
         {activeSection === "inicio" && <Hero setActiveSection={setActiveSection} />}
         {activeSection === "sobre-mi" && <About />}
-        {activeSection === "tecnologias" && <Technologies />}
+  {activeSection === "proyectos" && <Projects />}
         {activeSection === "contacto" && <Contact />}
       </div>
     </div>
